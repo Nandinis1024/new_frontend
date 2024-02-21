@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #0956bc;
+    background-image: url('../public/bg-image.jpg') !important;
+    background-size: cover;
+    background-position: center;
+}
