@@ -2,11 +2,11 @@ import './App.css';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import SignUp from './components/signUp';
-import Login from './components/login';
-import CreateProduct from './components/createProduct';
-import CreateFeatures from './components/createFeatures';
-import DisplayProducts from './components/displayProducts';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
+import CreateProduct from './components/CreateProduct';
+import CreateFeatures from './components/CreateFeatures';
+import DisplayProducts from './components/DisplayProducts';
 import DisplayUserProducts from './components/DisplayUserProducts';
 import Success from './components/Success';
 import Cancel from './components/Cancel';
@@ -14,6 +14,7 @@ import Unauthorized from './components/Unauthorized';
 import LandingPage from './components/LandingPage';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Logout from './components/Logout';
 import AdminNavBar from './components/AdminNavBar';
 
 
@@ -73,6 +74,7 @@ function App() {
             <Route path="/displayUserProducts" element={<DisplayUserProducts/>}/>
             <Route path="/success" element={<Success/>}/>
             <Route path="/cancel" element={<Cancel/>}/>
+            <Route path="/logout" element={<Logout/>}/>
         </Routes>
 
         <ToastContainer 

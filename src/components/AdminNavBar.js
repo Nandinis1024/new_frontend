@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import CreateProduct from './createProduct';
-import CreateFeatures from './createFeatures';
-import DisplayProducts from './displayProducts';
+import CreateProduct from './CreateProduct';
+import CreateFeatures from './CreateFeatures';
+import DisplayProducts from './DisplayProducts';
 
 function AdminNavBar() {
   const [selectedOption, setSelectedOption] = useState('');

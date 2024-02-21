@@ -1,3 +1,5 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -180,6 +182,25 @@ function CreateProduct() {
               </datalist>
             </div>
           ))}
+          <div>
+      <button className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onClick={() => navigate('/createFeatures')}>
+          Create Features
+      </button>
+        </div>
+        <button className="flex gap-3 mt-6 bg-white text-gray-700 py-2 px-10 text-center rounded-md hover:bg-white focus:outline-none focus:bg-blue-600"
+        onClick={() => navigate('/displayProducts')}
+      > 
+        <span className="text-gray-700"><FontAwesomeIcon icon={faArrowRight} className="h-6" /></span>
+        All Products
+      </button>
+
+      <button className="flex gap-3 mt-6 bg-white text-gray-700 py-2 px-10 text-center rounded-md hover:bg-white focus:outline-none focus:bg-blue-600"
+          onClick={() => navigate('/Logout')}
+          > 
+          <span className="text-gray-700"><FontAwesomeIcon icon={faArrowRight} className="h-6" /></span>
+          Logout
+      </button>
+    
         </div>
       </div>
     </div>

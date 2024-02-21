@@ -1,8 +1,12 @@
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState} from 'react';
 import ProductCard from './ProductCard';
+import { useNavigate } from 'react-router-dom';
 
 function DisplayProducts() {
-
+    
+    const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [productsPricing, setProductsPricing] = useState([]);
     const [productsValidity, setProductsValidity] = useState([]);
@@ -71,6 +75,14 @@ function DisplayProducts() {
 
     return (
         <div className="">
+            <div className='ml-5'>
+                <button className="flex gap-3 mt-6 bg-white text-gray-700 py-2 px-10 text-center rounded-md hover:bg-white focus:outline-none focus:bg-blue-600"
+                    onClick={() => navigate('/Logout')}
+                    > 
+                    <span className="text-gray-700"><FontAwesomeIcon icon={faArrowLeft} className="h-6" /></span>
+                    Logout
+                </button>
+            </div>
             <div className="mb-10 pt-4"> 
                 <h1 className="text-3xl text-center font-semibold">All Products</h1>
             </div>
@@ -80,6 +92,14 @@ function DisplayProducts() {
                         return <ProductCard key ={product._id} product={product} productPrice={productsPricing[product._id]} productValidity={productsValidity[product._id]} maxAbsoluteDiscount={discount[product._id]}/>
                     })
                 }
+            </div>
+            <div className='ml-5 mb-5'>
+                <button className="flex gap-3 mt-6 bg-white text-gray-700 py-2 px-10 text-center rounded-md hover:bg-white focus:outline-none focus:bg-blue-600"
+                    onClick={() => navigate('/createProduct')}
+                    > 
+                    <span className="text-gray-700"><FontAwesomeIcon icon={faArrowLeft} className="h-6" /></span>
+                    Go Back
+                </button>
             </div>
         </div>
     )

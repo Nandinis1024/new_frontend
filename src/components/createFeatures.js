@@ -1,6 +1,9 @@
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function CreateFeatures() {
   // State variables to store form data
@@ -44,11 +47,13 @@ function CreateFeatures() {
         body: JSON.stringify({title, description, userId, token}),
       });
       console.log(response.status);
-      if (response.status === 201) {
-        console.log('Product Created:');
+      if (response.status === 200) {
+        console.log('Features Created:');
+        toast.success('Features Created');
         navigate('/createFeatures');
       } else {
         console.error('failed:');
+        toast.error('Failed');
       }
     } catch (error) {
       console.error('failed:', error.message);
@@ -91,6 +96,12 @@ function CreateFeatures() {
             Create Feature
           </button>
         </form>
+        <button className="flex gap-3 mt-6 bg-white text-gray-700 py-2 px-10 text-center rounded-md hover:bg-white focus:outline-none focus:bg-blue-600"
+        onClick={() => navigate('/createProduct')}
+      > 
+        <span className="text-gray-700"><FontAwesomeIcon icon={faArrowLeft} className="h-6" /></span>
+        Go Back
+      </button>
       </div>
     </div>
   );
